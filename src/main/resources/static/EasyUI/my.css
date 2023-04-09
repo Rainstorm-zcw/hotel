@@ -1,0 +1,14 @@
+ *{font-size:12px;}
+.formTable{
+	width: 100%
+}
+.formTable td{
+	text-align: left;
+	line-height:26px;
+	border-bottom:1px dashed #ccc;
+}
+.formTable th{
+	text-align: right;
+	line-height:26px;
+	border-bottom:1px dashed #ccc;
+}

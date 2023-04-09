@@ -37,4 +37,6 @@ public interface HotelOrderService {
      * @return 返回修改结果
      */
     int updateHotelOrder(HotelOrder hotelOrder);
+
+    List<HotelOrder> queryHotelOrderAll(Integer hotelId);
 }

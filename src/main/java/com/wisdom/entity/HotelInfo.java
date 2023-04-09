@@ -88,6 +88,7 @@ public class HotelInfo implements Serializable {
 
     private List images;
 
+    private List<HotelOrder> hotelOrderList;
     private String imageUrl;
 
     public String getImageUrl() {
@@ -360,6 +361,14 @@ public class HotelInfo implements Serializable {
 
     public void setImages(List images) {
         this.images = images;
+    }
+
+    public List<HotelOrder> getHotelOrderList() {
+        return hotelOrderList;
+    }
+
+    public void setHotelOrderList(List<HotelOrder> hotelOrderList) {
+        this.hotelOrderList = hotelOrderList;
     }
 
     /**

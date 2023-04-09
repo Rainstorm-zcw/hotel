@@ -100,4 +100,19 @@ public class HotelOrderServiceImpl implements HotelOrderService {
     public int updateHotelOrder(HotelOrder hotelOrder) {
         return hotelOrderMapper.updateByPrimaryKeySelective(hotelOrder);
     }
+
+    @Override
+    public List<HotelOrder> queryHotelOrderAll(Integer hotelId) {
+        HotelOrderExample hotelOrderExample = new HotelOrderExample();
+        HotelOrderExample.Criteria criteria = hotelOrderExample.createCriteria();
+        hotelOrderExample.setOrderByClause("ID DESC");
+
+        if (Objects.nonNull(hotelId)) {
+            criteria.andHotelIdEqualTo(hotelId);
+        }
+        log.info("查询订单列表参数:{}", JSON.toJSONString(hotelOrderExample));
+        List<HotelOrder> hotelOrderList = hotelOrderMapper.selectByExample(hotelOrderExample);
+        log.info("返回订单列表结果:{}", JSON.toJSONString(hotelOrderList));
+        return hotelOrderList;
+    }
 }
